@@ -1,0 +1,18 @@
+<h1>About</h1>
+
+<% if (stockData && stockData.hasOwnProperty('results')) { %>
+    <h2>Stock Information: <%= stockData.results[0].T %></h2>
+    <ul>
+        <li>Open: <%= stockData.results[0].o %></li>
+        <li>High: <%= stockData.results[0].h %></li>
+        <li>Low: <%= stockData.results[0].l %></li>
+        <li>Close: <%= stockData.results[0].c %></li>
+    </ul>
+<% } else { %>s
+    <p>Error fetching stock data.</p>
+<% } %>
+<h2>News Articles:</h2>
+<p class="mb-4 opacity-70">
+    <%=news.articles[0].title%>
+    <%=news.articles[0].description%><br>
+</p>

@@ -1,0 +1,28 @@
+
+<img src="https://i.pinimg.com/originals/a9/9e/41/a99e419272b53630b5d5b178188a8900.gif" alt="person looking out through window" class="hero-image" width="981" height="528">
+
+<section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+
+    <ul class="article-ul">
+        <% data.forEach(post => { %>
+            <li>
+                <a href="/blogs/<%= post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+
+
+    <% if (nextPage !== null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+    <% } %>
+
+
+
+
+
+
+</section>
